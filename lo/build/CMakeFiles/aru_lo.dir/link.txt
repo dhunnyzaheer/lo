@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaru_lo.a CMakeFiles/aru_lo.dir/src/scanRegistrationClass.cpp.o CMakeFiles/aru_lo.dir/src/odomEstimationClass.cpp.o CMakeFiles/aru_lo.dir/src/laserMappingClass.cpp.o
+/usr/bin/ranlib libaru_lo.a

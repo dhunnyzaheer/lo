@@ -1,0 +1,107 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_412ba/fast && /usr/bin/make  -f CMakeFiles/cmTC_412ba.dir/build.make CMakeFiles/cmTC_412ba.dir/build
+make[1]: Entering directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_412ba.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_412ba.dir/src.c.o -c /home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_412ba
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_412ba.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_412ba.dir/src.c.o -o cmTC_412ba 
+CMakeFiles/cmTC_412ba.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_412ba.dir/build.make:98: recipe for target 'cmTC_412ba' failed
+make[1]: *** [cmTC_412ba] Error 1
+make[1]: Leaving directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_412ba/fast' failed
+make: *** [cmTC_412ba/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_82c91/fast && /usr/bin/make  -f CMakeFiles/cmTC_82c91.dir/build.make CMakeFiles/cmTC_82c91.dir/build
+make[1]: Entering directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_82c91.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_82c91.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_82c91
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82c91.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_82c91.dir/CheckFunctionExists.c.o -o cmTC_82c91  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_82c91.dir/build.make:98: recipe for target 'cmTC_82c91' failed
+make[1]: *** [cmTC_82c91] Error 1
+make[1]: Leaving directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_82c91/fast' failed
+make: *** [cmTC_82c91/fast] Error 2
+
+
+
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2da14/fast && /usr/bin/make  -f CMakeFiles/cmTC_2da14.dir/build.make CMakeFiles/cmTC_2da14.dir/build
+make[1]: Entering directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2da14.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -o CMakeFiles/cmTC_2da14.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2da14
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2da14.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ CMakeFiles/cmTC_2da14.dir/CheckFunctionExists.c.o -o cmTC_2da14 
+CMakeFiles/cmTC_2da14.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2da14.dir/build.make:98: recipe for target 'cmTC_2da14' failed
+make[1]: *** [cmTC_2da14] Error 1
+make[1]: Leaving directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_2da14/fast' failed
+make: *** [cmTC_2da14/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_1d040/fast && /usr/bin/make  -f CMakeFiles/cmTC_1d040.dir/build.make CMakeFiles/cmTC_1d040.dir/build
+make[1]: Entering directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1d040.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_1d040.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1d040
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d040.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_1d040.dir/CheckFunctionExists.c.o -o cmTC_1d040  /usr/lib/x86_64-linux-gnu/libblas.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so -lpthread -lm -ldl 
+CMakeFiles/cmTC_1d040.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1d040.dir/build.make:101: recipe for target 'cmTC_1d040' failed
+make[1]: *** [cmTC_1d040] Error 1
+make[1]: Leaving directory '/home/zaheer/aru-core/src/lo/build/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_1d040/fast' failed
+make: *** [cmTC_1d040/fast] Error 2
+
+
+
